@@ -5,27 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>화살날리기</title>
+    <script src="./js/Arrow.js"></script>
     <script>
-        //문서가 로드되면, 기존에 없었던 요소를 생성
-        //하여 위치지정...progammatically
-        var span;
-        var x=0;
-
+        var arrow;
         function create(){
-            span=document.createElement("span");
-            span.innerText="→";            
-            //css 적용 
-            span.style.position="absolute";
-            span.style.left=0+"px";
-            span.style.top=100+"px";
-            span.style.fontSize=30+"px";
-            document.body.appendChild(span);
-        }   
-        //span돔 요소의 x좌표값을 증가시켜보자!! 
+            arrow=new Arrow();                
+        }
         function manual(){
-            x+=10;
-            span.style.left=x+"px";
-        }    
+            //화살의 move메서드 호출하기
+            arrow.move();
+        }
     </script>
 </head>
 <body onLoad="create()">
