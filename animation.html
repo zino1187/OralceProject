@@ -7,13 +7,21 @@
     <title>화살날리기</title>
     <script src="./js/Arrow.js"></script>
     <script>
-        var arrow;
+        var arrow=new Array();
+
         function create(){
-            arrow=new Arrow();                
+            for(var i=0;i<100;i++){
+                arrow.push(new Arrow(i*30));                
+            }
         }
         function manual(){
             //화살의 move메서드 호출하기
-            arrow.move();
+            for(var i=0;i<arrow.length;i++){
+                arrow[i].move();
+            }
+        }
+        function auto(){
+            setInterval("manual()",100);    
         }
     </script>
 </head>
