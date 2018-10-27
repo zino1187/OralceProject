@@ -9,6 +9,8 @@
         //문서가 로드되면, 기존에 없었던 요소를 생성
         //하여 위치지정...progammatically
         var span;
+        var x=0;
+
         function create(){
             span=document.createElement("span");
             span.innerText="→";            
@@ -21,7 +23,8 @@
         }   
         //span돔 요소의 x좌표값을 증가시켜보자!! 
         function manual(){
-
+            x+=10;
+            span.style.left=x+"px";
         }    
     </script>
 </head>
